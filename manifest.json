@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Leboncoin — filtres locaux (POC)",
+  "version": "0.5.7",
+  "description": "Filtre les résultats chargés par catégorie, ville, ancienneté et titre.",
+  "permissions": ["storage", "activeTab", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Filtres Leboncoin",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.leboncoin.fr/*", "https://leboncoin.fr/*"],
+      "js": ["settings.js", "dates.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

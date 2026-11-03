@@ -1,0 +1,33 @@
+:root { font: 14px/1.45 system-ui, sans-serif; color: #20242b; background: #fff; }
+body { width: 350px; margin: 0; }
+form { padding: 18px; }
+h1 { margin: 0 0 14px; font-size: 19px; }
+.header-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.toggle { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+input[type="checkbox"] { width: 17px; height: 17px; accent-color: #df4b18; }
+fieldset { margin: 18px 0 0; padding: 0; border: 0; min-width: 0; }
+legend { margin-bottom: 8px; font-weight: 700; }
+label { display: block; }
+textarea, input[type="number"] { box-sizing: border-box; width: 100%; margin-top: 7px; padding: 9px; border: 1px solid #adb4bf; border-radius: 5px; font: inherit; }
+textarea { resize: vertical; }
+.exclusion-fields { display: grid; grid-template-columns: minmax(0, 1fr) 160px; align-items: start; gap: 12px; }
+.exclusion-fields > label { padding-top: 7px; }
+.exclusion-fields textarea, .exclusion-fields input[type="number"] { min-width: 0; margin: 0; }
+.section-heading { box-sizing: border-box; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 0; }
+.choice-list { max-height: 150px; overflow-y: auto; margin: 8px 0 0; padding: 0; list-style: none; }
+.choice-list:empty { display: none; }
+.choice-list label { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+.choice-list input { flex-shrink: 0; }
+#category-suggestions { max-height: 170px; overflow-y: auto; border: 1px solid #adb4bf; border-radius: 5px; }
+#category-suggestions button { display: block; margin: 0; padding: 8px 10px; border-radius: 0; background: white; color: #20242b; text-align: left; font-weight: 400; }
+#category-suggestions button:hover, #category-suggestions [aria-selected="true"] { background: #fff0e9; }
+button { width: 100%; margin-top: 16px; padding: 10px; border: 0; border-radius: 5px; background: #df4b18; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: .5; cursor: wait; }
+.page-button, .reset-button { flex-shrink: 0; width: auto; margin: 0; padding: 4px 8px; border: 1px solid #adb4bf; background: #fff; color: #20242b; font-size: 11px; font-weight: 500; }
+dialog { box-sizing: border-box; width: calc(100% - 24px); max-width: 326px; max-height: calc(100% - 24px); padding: 16px; border: 1px solid #adb4bf; border-radius: 8px; }
+dialog::backdrop { background: rgb(0 0 0 / 40%); }
+dialog h2 { margin: 0 0 12px; font-size: 17px; }
+dialog .choice-list { max-height: min(300px, 45vh); }
+:focus-visible { outline: 2px solid #285db0; outline-offset: 2px; }
+.status { margin: 9px 0 0; font-size: 12px; }
+.status:empty { display: none; }

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filtres Leboncoin</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="settings.js" defer></script>
+  <script src="autocomplete.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <form id="filters">
+    <header>
+      <h1>Filtres Leboncoin</h1>
+      <div class="header-controls">
+        <label class="toggle"><input id="enabled" type="checkbox" checked> Activer le filtre</label>
+        <button id="reset-filters" class="reset-button" type="button">Réinitialiser</button>
+      </div>
+    </header>
+    <fieldset>
+      <legend class="section-heading">
+        <span>Catégories à exclure</span>
+        <button id="open-page-categories" class="page-button" type="button" aria-haspopup="dialog" aria-controls="page-categories">Présentes sur page active</button>
+      </legend>
+      <textarea id="categories" rows="3" aria-label="Catégories à exclure" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="category-suggestions" aria-expanded="false"></textarea>
+      <div id="category-suggestions" role="listbox" aria-label="Suggestions de catégories" hidden></div>
+    </fieldset>
+    <fieldset>
+      <legend class="section-heading">
+        <span>Villes à exclure</span>
+        <button id="open-page-cities" class="page-button" type="button" aria-haspopup="dialog" aria-controls="page-cities">Présentes sur page active</button>
+      </legend>
+      <textarea id="cities" rows="3" aria-label="Villes à exclure"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Exclure les annonces</legend>
+      <div class="exclusion-fields">
+        <label for="max-age-days">Plus anciennes que (jours)</label>
+        <input id="max-age-days" type="number" min="1" step="1" inputmode="numeric">
+        <label for="title-contains">Dont le titre contient</label>
+        <textarea id="title-contains" rows="3"></textarea>
+      </div>
+    </fieldset>
+    <button id="apply" type="submit">Appliquer</button>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </form>
+  <dialog id="page-categories" aria-labelledby="page-categories-title">
+    <h2 id="page-categories-title">Catégories de cette page</h2>
+    <ul id="page-category-list" class="choice-list"></ul>
+    <p id="page-category-status" class="status" role="status"></p>
+    <button id="close-page-categories" type="button">Fermer</button>
+  </dialog>
+  <dialog id="page-cities" aria-labelledby="page-cities-title">
+    <h2 id="page-cities-title">Villes de cette page</h2>
+    <ul id="page-city-list" class="choice-list"></ul>
+    <p id="page-city-status" class="status" role="status"></p>
+    <button id="close-page-cities" type="button">Fermer</button>
+  </dialog>
+</body>
+</html>
